@@ -1,0 +1,75 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16 px;
+}
+
+.language {
+    text-align:end;
+    margin: 10px 50px;
+}
+
+.siloamSVG {
+    float: left;
+    margin: auto 50px;
+}
+
+.ID, .ENG {
+    display: inline;
+    text-decoration: none;
+}
+
+.ENG {
+    color:blue;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin:20px auto;
+    font-size: 1.5rem;
+}
+
+.SdanK {
+    margin-top: 70px;
+}
+
+.main {
+    margin: auto 50px;
+}
+
+/* .mainList {
+    list-style-position: inside;
+  padding: 0;
+} */
+
+.boldedList {
+    font-weight: bold;
+}
+
+@media (max-width:464px) {
+    ol {
+        padding: 10px;
+        text-align:left;
+    }
+
+    li {
+        padding: 0;
+    }
+
+    .title {
+        font-weight: bold;
+        text-align: left;
+        margin:40px 30px 10px 30px;
+        font-size: 1.5rem;
+    }
+    
+    .main {
+        margin: auto 30px;
+    }
+
+    .siloamSVG {
+        float: left;
+        margin: auto 30px;
+        width: 150px;
+    }
+}
