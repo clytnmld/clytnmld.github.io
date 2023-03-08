@@ -3,6 +3,11 @@
     font-size: 16 px;
 }
 
+.siloamSVG {
+    float: left;
+    margin: auto 50px;
+}
+
 .language {
     text-align:end;
     margin: 20px 50px;
@@ -54,6 +59,11 @@
     }
     
     .main {
+        margin: auto 30px;
+    }
+    
+    .siloamSVG {
+        float: left;
         margin: auto 30px;
     }
 }
