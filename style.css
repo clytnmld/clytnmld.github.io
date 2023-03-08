@@ -15,6 +15,7 @@
 
 .ID, .ENG {
     display: inline;
+    text-decoration: none;
 }
 
 .ID {
