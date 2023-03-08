@@ -3,14 +3,14 @@
     font-size: 16 px;
 }
 
+.language {
+    text-align:end;
+    margin: 10px 50px;
+}
+
 .siloamSVG {
     float: left;
     margin: auto 50px;
-}
-
-.language {
-    text-align:end;
-    margin: 20px 50px;
 }
 
 .ID, .ENG {
@@ -26,6 +26,10 @@
     text-align: center;
     margin:20px auto;
     font-size: 1.5rem;
+}
+
+.SdanK {
+    margin-top: 70px;
 }
 
 .main {
@@ -54,16 +58,17 @@
     .title {
         font-weight: bold;
         text-align: left;
-        margin:10px 30px;
+        margin:40px 30px 10px 30px;
         font-size: 1.5rem;
     }
     
     .main {
         margin: auto 30px;
     }
-    
+
     .siloamSVG {
         float: left;
         margin: auto 30px;
+        width: 150px;
     }
 }
