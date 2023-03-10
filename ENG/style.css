@@ -5,7 +5,7 @@
 
 .language {
     text-align:end;
-    margin: 10px 50px;
+    margin: 30px 50px;
 }
 
 .siloamSVG {
@@ -23,7 +23,7 @@
 }
 
 .ID {
-    color:black;
+    color: black;
 }
 
 .title {
@@ -63,7 +63,7 @@
     .title {
         font-weight: bold;
         text-align: left;
-        margin:40px 30px 10px 30px;
+        margin:60px 30px 10px 30px;
         font-size: 1.5rem;
     }
     
