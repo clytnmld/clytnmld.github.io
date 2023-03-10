@@ -12,7 +12,83 @@
       rel="stylesheet"
     />
     <title>Privacy Poilicy DoctorApp</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16 px;
+}
+
+.language {
+    text-align:end;
+    margin: 10px 50px;
+}
+
+.siloamSVG {
+    float: left;
+    margin: auto 50px;
+}
+
+.ID, .ENG {
+    display: inline;
+    text-decoration: none;
+}
+
+.ID {
+    color:blue;
+}
+
+.ENG {
+    color: black;
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin:20px auto;
+    font-size: 1.5rem;
+}
+
+.SdanK {
+    margin-top: 70px;
+}
+
+.main {
+    margin: auto 50px;
+}
+
+/* .mainList {
+    list-style-position: inside;
+  padding: 0;
+} */
+
+@media (max-width:464px) {
+    ol {
+        padding: 10px;
+        text-align:left;
+    }
+
+    li {
+        padding: 0;
+    }
+
+    .title {
+        font-weight: bold;
+        text-align: left;
+        margin:60px 30px 10px 30px;
+        font-size: 1.5rem;
+    }
+    
+    .main {
+        margin: auto 30px;
+    }
+
+    .siloamSVG {
+        float: left;
+        margin: auto 30px;
+        width: 150px;
+    }
+}
+    </style>
   </head>
   <body>
     <svg class="siloamSVG" width="368" height="76" viewBox="0 0 368 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,8 +116,8 @@
       </linearGradient>
       </defs>
       </svg>
-    <div class="language"><p><a href="index.html" class="ID">ID</a> |<a href="../ENG/index.html" class="ENG"> ENG</a></p></div>
-    <div class="SdanK title">SYARAT-SYARAT DAN KETENTUAN-KETENTUAN DoctorApp</div>
+    <div class="language"><p><a href="../IND/index.html" class="ID">ID</a> |<a href="../ENG/index.html" class="ENG"> ENG</a></p></div>
+    <div class="SdanK title"><strong>SYARAT-SYARAT DAN KETENTUAN-KETENTUAN DoctorApp</strong></div>
     <div class="main">
       <div class="pembuka">
         <p>
@@ -67,7 +143,7 @@
                 <ol type="a">
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Jadwal Janji Temu Pasien
+                      <strong>Layanan Jadwal Janji Temu Pasien</strong>
                     </div>
                     <p>
                       Menampilkan informasi-informasi sehubungan dengan jadwal praktik atau konsultasi pasien seperti nama pasien, waktu dan hari, serta lokasi Siloam Hospitals yang akan melakukan janji temu dengan Anda.
@@ -75,14 +151,16 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Informasi Rekam Medis Pasien
+                      <strong>Layanan Informasi Rekam Medis Pasien</strong>
                     </div>
                     <p>
                       Anda dapat melakukan pencarian rekam medis terhadap pasien, namun terbatas hanya untuk melihat rekam medis pasien yang pernah Anda tangani selama praktik di Siloam Hospitals dan tidak dapat untuk melakukan pengisian maupun perubahan.
                     </p>
                   </li>
                   <li>
-                    <div class="headerlist1 boldedList">Layanan Pengajuan Cuti/Libur</div>
+                    <div class="headerlist1 boldedList">
+                      <strong>Layanan Pengajuan Cuti/Libur</strong>
+                    </div>
                     <p>
                       Anda dapat melakukan pengajuan cuti/libur dengan memilih
                       hari, dokter pengganti dan juga memilih pasien yang akan
@@ -94,7 +172,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Pengkinian Data Untuk Surat Tanda Registrasi
+                      <strong>Layanan Pengkinian Data Untuk Surat Tanda Registrasi</strong>
                       (“STR”) & Surat Izin Praktik (“SIP”)
                     </div>
                     <p>
@@ -110,7 +188,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Permohonan Pembaharuan Kredensial
+                      <strong>Layanan Permohonan Pembaharuan Kredensial</strong>
                     </div>
                     <p>
                       Anda dapat mengajukan permohonan pembaharuan terhadap
@@ -125,7 +203,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Statistik Tindakan Dokter
+                      <strong>Layanan Statistik Tindakan Dokter</strong>
                     </div>
                     <p>
                       Anda dapat melihat jumlah tindakan <i>Outpatient Department</i>
@@ -134,7 +212,9 @@
                     </p>
                   </li>
                   <li>
-                    <div class="headerlist1 boldedList">Layanan Doctor Fee</div>
+                    <div class="headerlist1 boldedList">
+                      <strong>Layanan Doctor Fee</strong>
+                    </div>
                     <p>
                       Anda dapat melihat data Doctor Fee Report bulanan Anda
                       yang telah diunggah oleh bagian keuangan dari Siloam
@@ -144,7 +224,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Scan QR untuk Electronic Medical Record
+                      <strong>Layanan Scan QR untuk Electronic Medical Record</strong>
                     </div>
                     <p>
                       Anda dapat mengakses <i>Electronic Medical Record Outpatient
@@ -155,7 +235,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Pembaharuan Profil Dokter
+                      <strong>Layanan Pembaharuan Profil Dokter</strong>
                     </div>
                     <p>
                       Anda dapat mengakses menu profile Anda dan melakukan
@@ -168,7 +248,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Pembaharuan Informasi Keuangan
+                      <strong>Layanan Pembaharuan Informasi Keuangan</strong>
                     </div>
                     <p>
                       Anda dapat melakukan perubahan mengenai informasi Anda sehubungan dengan nomor rekening bank dan Nomor Pokok Wajib Pajak (NPWP) yang digunakan untuk keperluan administrative. Untuk setiap persetujuan perubahan terkait informasi keuangan Anda wajib mendapatkan persetujuan oleh pejabat yang berwenang dari masing-masing Siloam Hospitals dimana Anda melakukan praktik.
@@ -176,7 +256,7 @@
                   </li>
                   <li>
                     <div class="headerlist1 boldedList">
-                      Layanan Lain
+                      <strong>Layanan Lain</strong>
                     </div>
                     <p>
                       Anda akan mendapatkan layanan-layanan tambahan lainnya yang saat ini sedang dikembangkan oleh Kami.
@@ -392,7 +472,7 @@
         </ol>
       </div>
     </div>
-    <div class="kebijakanprivasi title">KEBIJAKAN PRIVASI DoctorApp</div>    
+    <div class="kebijakanprivasi title"><strong>KEBIJAKAN PRIVASI DoctorApp</strong></div>    
     <div class="main">
         <div class="pembuka">
             <p>
@@ -402,7 +482,7 @@
         <div class="list">
             <ol class="mainList"type="A">
                 <li>
-                    <div class="boldedList"> Lingkup Kebijakan Privasi</div>
+                    <div class="boldedList"><strong>Lingkup Kebijakan Privasi</strong></div>
                     <ol type="1">
                         <li><p>APLIKASI dan rumah sakit – rumah sakit dan/atau klinik-klinik medis (termasuk Dokter didalamnya) yang tergabung dalam Siloam Hospitals Group (“Rumah Sakit”) dikelola oleh KAMI.</p></li>
                         <li><p>Kebijakan Privasi ini mengatur penggunaan dan perlindungan informasi yang diberikan oleh PENGGUNA ketika menggunakan layanan APLIKASI.</p></li>
@@ -412,11 +492,11 @@
                     </ol>
                 </li>
                 <li>
-                    <div class="boldedList">Registrasi</div>
+                    <div class="boldedList"><strong>Registrasi</strong></div>
                     <p>Untuk menggunakan APLIKASI maka PENGGUNA diharuskan terdaftar sebagai dokter yang berpraktik di Siloam Hospital Group.</p>
                 </li>
                 <li>
-                    <div class="boldedList">Data Pribadi Milik Pengguna</div>
+                    <div class="boldedList"><strong>Data Pribadi Milik Pengguna</strong></div>
                     <ol type="1">
                         <li><p>KAMI mengumpulkan informasi yang diberikan PENGGUNA saat PENGGUNA membuat akun dan profil, mengirimkan surat elektronik / surel / e-mail kepada KAMI atau meletakkan informasi atau konten lain di APLIKASI</p></li>
                         <ol type="a">
@@ -426,7 +506,7 @@
                     </ol>
                 </li>
                 <li>
-                    <div class="boldedList">Penggunaan Informasi Pengguna</div>
+                    <div class="boldedList"><strong>Penggunaan Informasi Pengguna</strong></div>
                     <ol type="1">
                         <li>
                             <p>KAMI menggunakan informasi PENGGUNA untuk:</p>
@@ -444,7 +524,7 @@
                     </ol>
                 </li>
                 <li>
-                    <div class="boldedList"><p>Akses dan Perizinan Pada Perangkat PENGGUNA</p></div>
+                    <div class="boldedList"><strong>Akses dan Perizinan Pada Perangkat PENGGUNA</strong></div>
                     <p>Untuk perangkat Android dan iOS, Aplikasi akan membutuhkan permission/ izin akses untuk:</p>
                     <ol type="1">
                         <li>
@@ -485,18 +565,18 @@
                     </ol>
                 </li>
                 <li>
-                    <div class="boldedList">Hukum Yang Berlaku</div>
+                    <div class="boldedList"><strong>Hukum Yang Berlaku</strong></div>
                     <p>Kebijakan Privasi ini diatur berdasarkan hukum Republik Indonesia dan PENGGUNA diwajibkan tunduk kepada semua peraturan yang berlaku di Indonesia.</p>
                 </li>
                 <li>
-                    <div class="boldedList">Upaya Pengamanan</div>
+                    <div class="boldedList"><strong>Upaya Pengamanan</strong></div>
                     <ol type="1">
                         <li><p>KAMI senantiasa melakukan upaya yang wajar untuk menjaga informasi yang PENGGUNA berikan kepada KAMI aman dan tidak dapat digunakan oleh pihak-pihak yang tidak bertanggungjawab. Namun demikian, PENGGUNA mengetahui dan setuju bahwa transmisi atau akses internet tidak selamanya menciptakan suatu APLIKASI yang aman dan pribadi, dan karenanya setiap pesan atau informasi yang PENGGUNA kirimkan atau gunakan dalam APLIKASI mungkin dapat dibajak atau diambil oleh pihak ketiga yang tidak bertanggung jawab.</p></li>
                         <li><p>KAMI akan menyimpan data pribadi PENGGUNA dalam server database KAMI, baik di dalam maupun di luar negeri, untuk memberikan perlindungan yang wajar berdasarkan penilaian KAMI dari penyalahgunaan atau penghilangan Data Pribadi PENGGUNA.</p></li>
                     </ol>
                 </li>
                 <li>
-                    <div class="boldedList">Pertanyaan, keluhan dan kontak</div>
+                    <div class="boldedList"><strong>Pertanyaan, keluhan dan kontak</strong></div>
                     <p>Jika PENGGUNA memiliki pertanyaan tentang kebijakan kerahasiaan ini, peraturan-peraturan KAMI, hak PENGGUNA, dan hubungan PENGGUNA dengan APLIKASI, silahkan mengirim e-mail ke helpdesk@siloamhospitals.com</p>
                 </li>
             </ol>
