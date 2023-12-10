@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+      .container-bg {
+        background-image: url("img/herobg2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #ffffff; /* Set text color to be visible on the background */
+        padding: 50px; /* Adjust padding as needed */
+      }
+      .center-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+      }
+      .bg-navbar{
+        background-color: rgba(22,22,22,0.9);
+      }
+      .bg-top {
+        background-color: #ffffff;
+      }
+      .bg-parallax {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .costume-padding1 {
+        margin-top: 1rem;
+      }
+      .parallax-container {
+            height: 55vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background: url('img/parallaximage.jpg') center/cover no-repeat fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Content inside the parallax container */
+
+        /* Adjust the zoom-out effect on scroll */
+        .parallax-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/parallaximage.jpg') center/cover no-repeat fixed;
+            opacity: 1; /* Adjust the opacity based on your preference */
+            z-index: -1;
+        }
+
+        /* Optional: Add a subtle zoom-out effect on scroll */
+        @keyframes zoomOut {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- start navbar top -->
+    <!-- <nav class="navbar navbar-light  bg-top border-bottom border-info border-4 fixed-top">
+        <div class="container-fluid justify-content-center">
+          <div class="navbar-brand fs-6">
+            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="23" height="15" class="d-inline-block align-text-top">
+            Powered by <span class="fw-bold">GoDaddy Websites + Marketing.</span>  Create your free website now.
+            <button type="button" class="btn bg-top fs-6 border border-dark ms-3">Start For Free</button>
+          </div>
+        </div>
+    </nav> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a href="#" class="navbar-brand">CRAFTY CODER</a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collape navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white"> Home </a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white"> About Us </a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white pe-none"> | </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white">
+                <i class="fa-solid fa-user"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- end navbar top -->
+    <div class="container-fluid container-bg bg-light rounded-lg">
+      <hr class="w-90" />
+      <div class="container justify-content-center text-center p-5">
+        <h1 class="display-4 fw-bold">
+          EMPOWERING <br />
+          INNOVATIONS, DELIVERING <br />
+          VALUE.
+        </h1>
+        <p class="lead">
+          Transforming your business with cutting-edge technology.
+        </p>
+        <a class="btn btn-danger btn-lg py-3 px-5" href="#" role="button"
+          >Learn more</a
+        >
+      </div>
+    </div>
+
+    <div class="justify-content-center text-center m-3 pt-4 pb-2">
+      <h3 class="display-6 fw-bold text-danger">ABOUT CRAFTY CODER</h3>
+    </div>
+
+    <hr class="container w-25 text-danger align-content-center" />
+
+    <!-- abt crafty coder -->
+    <div class="container pb-2 py-4">
+      <div
+        class="row justify-content-center align-content-center center-container"
+      >
+        <div class="col-lg text-center">
+          <img
+            class="img-fluid mx-auto"
+            src="img/ourmission.webp"
+            alt="ourmission"
+          />
+        </div>
+        <div class="col-lg container align-content-center mx-auto">
+          <h3 class="text-center fw-normal">Our Mission</h3>
+          <p class="text-center align-middle text-muted">
+            <br />At Crafty Coder, our mission is to provide top-notch IT
+            consulting services to small businesses. We strive to help our
+            clients optimize their technology solutions to improve efficiency
+            and productivity.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pb-2 py-4">
+      <div
+        class="row flex-column-reverse flex-md-row justify-content-center align-content-center center-container"
+      >
+        <div class="col-lg container align-content-center mx-auto">
+          <h3 class="text-center fw-normal">Our Team</h3>
+          <p class="text-center align-middle text-muted">
+            <br />Our team is comprised of experienced IT professionals who are
+            passionate about helping small businesses succeed. We work closely
+            with our clients to understand their unique needs and provide
+            tailored solutions.
+          </p>
+        </div>
+        <div class="col-lg text-center">
+          <img
+            class="img-fluid mx-auto"
+            src="img/ourteam.webp"
+            alt="ourteam"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container pb-2 py-4">
+      <div
+        class="row justify-content-center align-content-center center-container"
+      >
+        <div class="col-lg text-center">
+          <img
+            class="img-fluid mx-auto"
+            src="img/ourservices.webp"
+            alt="ourservices"
+          />
+        </div>
+        <div class="col-lg container align-content-center mx-auto">
+          <h3 class="text-center fw-normal">Our Services</h3>
+          <p class="text-center align-middle text-muted">
+            <br />We offer a wide range of IT consulting services, including
+            UI/UX design, application development, software integration and
+            migration. Our services are designed to help small businesses stay
+            competitive and secure in today's digital landscape.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end abt crafty order -->
+
+    <!-- online appointments -->
+    <div
+      class="container-fluid bg-light justify-content-center text-center mt-5 pb-5"
+    >
+      <div class="jumbotron mt-4">
+        <div class="container">
+          <h2 class="display-6 fw-bold text-danger pt-5 pb-4">
+            ONLINE APPOINTMENT
+          </h2>
+
+          <hr class="container w-25 text-danger align-content-center" />
+        </div>
+
+        <h4
+          class="container bg-top w-50 justify-content-center fw-normal py-3 mt-5 text-muted"
+        >
+          New services are coming soon!
+        </h4>
+      </div>
+    </div>
+    <div class="parallax-container container-fluid">
+        <div class="parallax-content container text-center">
+            <h2 class="display-6 fw-bold text-light pt-5 pb-5">
+            CLIENTS TESTIMONIAL
+          </h2>
+        </div>
+
+        <h4
+          class="container bg-parallax text-light w-50 justify-content-center text-center fw-normal py-2 mt-3"
+        >
+          Reviews coming soon!
+        </h4>
+        </div>
+    </div>
+    <!-- contact us -->
+    <div
+      class="container-fluid bg-light justify-content-centerpb-5"
+    >
+      <div class="jumbotron">
+        <div class="container  text-center ">
+          <h2 class="display-6 fw-bold text-danger pt-5 pb-4">
+            CONTACT US
+          </h2>
+
+          <hr class="container w-25 text-danger align-content-center" />
+        </div>
+      </div>
+    
+
+    <!-- contact us -->
+    <div class="container py-5">
+      <!-- Two Columns Grid -->
+      <div class="row">
+          <!-- First Column (Form) -->
+          <div class="col-md-6 px-5 justify-content-center">
+              <div>
+                  <h4 class="display-6" style="font-size: 1.6rem;">Drop us a line!</h4>
+                  <!-- Your Form Goes Here -->
+                  <form class="custom-form">
+                    <div class="my-4">
+                        <input type="text" class="form-control" placeholder="Name" name="name">
+                    </div>
+                    <div class="my-4">
+                        <input type="email" class="form-control" placeholder="Email*" name="email" required>
+                    </div>
+                    <div class="my-4">
+                        <textarea class="form-control form-control-lg" placeholder="Message" name="message" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <a href="#" id="fileLink" class="text-danger text-decoration-none"><i class="fa-solid fa-paperclip pe-2"></i>Attach Files</a>.
+                    <input type="file" id="fileUpload" name="fileUpload">
+                  </div>
+                  <p class="fs-6 text-center text-muted">
+                    This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                  </p>
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-danger mx-2 btn-lg">Send</button>
+                    <a href="#" class="text-danger mx-2">Cancel</a>
+                </div>
+                </form>
+              </div>
+          </div>
+  
+          <!-- Second Column (Image) -->
+          <div class="col-md-6">
+              <div>
+                  <!-- Your Image Goes Here -->
+                  <img
+            class="img-fluid mx-auto"
+            src="img/contactusimg.webp"
+            alt="ourteam"
+          />
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <!-- js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/70493098ee.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-navbar", "shadow");
+        } else {
+          nav.classList.remove("bg-navbar", "shadow");
+        }
+      });
+
+      document.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        var parallaxContainer = document.querySelector('.parallax-container::before');
+        
+        // Adjust the condition based on your needs
+        if (scrollPosition > 100) {
+            parallaxContainer.style.animation = 'zoomOut 10s infinite alternate';
+        } else {
+            parallaxContainer.style.animation = 'none';
+        }
+    });
+    document.getElementById('fileLink').addEventListener('click', function () {
+        document.getElementById('fileUpload').click();
+    });
+    </script>
+  </body>
+</html>
