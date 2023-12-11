@@ -14,6 +14,10 @@
         color: #ffffff; /* Set text color to be visible on the background */
         padding: 50px; /* Adjust padding as needed */
       }
+      .rounded-circle-btn {
+      width: 4rem;
+      height: 4rem;
+    }
       .center-container {
         display: flex;
         align-items: center;
@@ -22,6 +26,9 @@
       }
       .bg-navbar{
         background-color: rgba(22,22,22,0.9);
+      }
+      .bg-footer{
+        background-color: rgba(0,0,0,1);
       }
       .bg-top {
         background-color: #ffffff;
@@ -143,6 +150,9 @@
         </div>
       </div>
     </nav>
+
+    <button class="btn-lg btn-danger border-0 position-fixed bottom-0 end-0 m-4 rounded-circle rounded-circle-btn align-content-center justify-content-center text-center" style="z-index: 10;"><i class="fa-solid fa-message"></i></button>
+
     <!-- end navbar top -->
     <div class="container-fluid container-bg bg-light rounded-lg">
       <hr class="w-90 mt-4"/>
@@ -335,7 +345,38 @@
       </div>
   </div>
 </div>
-
+<!-- end contact us -->
+<!-- subscribe -->
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg text-danger display-6 fw-normal mb-3 text-center">
+      Subscribe
+    </div>
+    <div class="col-lg-7 ">
+      <input type="email" class="mb-3 justify-content-center form-control form-control-lg" placeholder="Email*" name="email" required>
+    </div>
+    <div class="col-lg text-center">
+      <button type="submit" class="mb-3 btn btn-danger btn-lg" style="width: 100%;">Sign Up</button>
+    </div>
+  </div>
+</div>
+<!-- end subscribe -->
+<!-- footer -->
+<footer class="footer mt-auto py-3 bg-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 text-center pt-2">
+        <!-- Left side content -->
+        <p class="text-muted">Copyright © 2023 Crafty Coder - All Rights Reserved.</p>
+      </div>
+      <div class="col-lg-6 text-lg-end text-center pt-2">
+        <!-- Right side content -->
+        <p class="text-muted">Powered by <span class="text-danger">GoDaddy</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->
     <!-- js -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script
