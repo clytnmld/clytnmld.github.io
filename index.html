@@ -1,425 +1,1795 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <style>
-      .container-bg {
-        background-image: url("img/herobg2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: #ffffff; /* Set text color to be visible on the background */
-        padding: 50px; /* Adjust padding as needed */
-      }
-      .rounded-circle-btn {
-      width: 4rem;
-      height: 4rem;
-    }
-      .center-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: auto;
-      }
-      .bg-navbar{
-        background-color: rgba(22,22,22,0.9);
-      }
-      .bg-footer{
-        background-color: rgba(0,0,0,1);
-      }
-      .bg-top {
-        background-color: #ffffff;
-      }
-      .bg-parallax {
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .costume-padding1 {
-        margin-top: 1rem;
-      }
-      .parallax-container {
-            height: 43vh;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            background: url('img/parallaximage.jpg') center/cover no-repeat fixed;
-            position: relative;
-            overflow: hidden;
-        }
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clayton Mildy — QA Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<template id="__bundler_thumbnail" data-bg-color="#0b0d10">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0b0d10"/>
+    <!-- subtle grid hint -->
+    <g stroke="#1f242b" stroke-width="1">
+      <line x1="0" y1="200" x2="1200" y2="200"/>
+      <line x1="0" y1="600" x2="1200" y2="600"/>
+      <line x1="300" y1="0" x2="300" y2="800"/>
+      <line x1="900" y1="0" x2="900" y2="800"/>
+    </g>
+    <!-- amber check / status mark -->
+    <g transform="translate(600 400)">
+      <circle r="120" fill="none" stroke="#f5a524" stroke-width="6"/>
+      <path d="M -50 4 L -10 44 L 60 -36" fill="none" stroke="#f5a524" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- monospace caption mark -->
+    <g fill="#6b7280" font-family="monospace" font-size="28" letter-spacing="4">
+      <text x="80" y="120">// clayton.mildy</text>
+      <text x="80" y="730">qa engineer · widatech</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root {
+    --bg:           #0b0d10;
+    --bg-elev:      #111418;
+    --bg-elev-2:    #161a1f;
+    --line:         #1f242b;
+    --line-soft:    #181c22;
+    --ink:          #e9ecef;
+    --ink-dim:      #a4adb8;
+    --ink-mute:     #6b7280;
+    --accent:       #f5a524;
+    --accent-soft:  rgba(245, 165, 36, 0.12);
+    --accent-line:  rgba(245, 165, 36, 0.35);
+    --pass:         #4ade80;
+    --warn:         #f5a524;
+    --fail:         #ef4444;
 
-        /* Content inside the parallax container */
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: 'Space Grotesk', system-ui, sans-serif;
 
-        /* Adjust the zoom-out effect on scroll */
-        .parallax-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('img/parallaximage.jpg') center/cover no-repeat fixed;
-            opacity: 1; /* Adjust the opacity based on your preference */
-            z-index: -1;
-        }
+    --maxw: 1180px;
+    --pad-x: clamp(20px, 4vw, 56px);
+    --gutter: 56px;
+  }
 
-        /* Optional: Add a subtle zoom-out effect on scroll */
-        @keyframes zoomOut {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.2);
-            }
-        }
-        input[type="file"] {
-            display: none;
-        }
-    </style>
-  </head>
-  <body>
-    <!-- start navbar top -->
-    <!-- <nav class="navbar navbar-light  bg-top border-bottom border-info border-4 fixed-top">
-        <div class="container-fluid justify-content-center">
-          <div class="navbar-brand fs-6">
-            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="23" height="15" class="d-inline-block align-text-top">
-            Powered by <span class="fw-bold">GoDaddy Websites + Marketing.</span>  Create your free website now.
-            <button type="button" class="btn bg-top fs-6 border border-dark ms-3">Start For Free</button>
-          </div>
-        </div>
-    </nav> -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
-      <div class="container">
-        <a href="#" class="navbar-brand">CRAFTY CODER</a>
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-bs-target="#navbarNav"
-          data-bs-toggle="collapse"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle Navbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="mx-auto"></div>
-          <!-- mobile view -->
-          <ul class="navbar-nav d-lg-none"> <!-- Hide on Medium and Larger Screens -->
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sign in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Bookings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">My Account</a>
-            </li>
-          </ul>
-          <!-- monitor view -->
-          <div class="d-none d-lg-inline">
-          <ul class="navbar-nav">
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link text-white"> Home </a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link text-white"> About Us </a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link text-white pe-none"> | </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white">
-                <i class="fa-solid fa-cart-shopping"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link text-white">
-                <i class="fa-solid fa-user"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        </div>
-      </div>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  ::selection { background: var(--accent); color: #0b0d10; }
+
+  a { color: inherit; text-decoration: none; cursor: none; }
+  button { font: inherit; cursor: none; }
+  input, textarea, label { cursor: none; }
+
+  /* ───────── Custom cursor ───────── */
+  :root {
+    --cursor-size: 39px;
+    --cursor-hover-size: 55px;
+    --cursor-dot-size: 14px;
+  }
+  .cursor-dot {
+    width: var(--cursor-dot-size); height: var(--cursor-dot-size);
+    background: var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.18s ease, background 0.18s ease, width 0.18s ease, height 0.18s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: var(--cursor-size); height: var(--cursor-size);
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    opacity: 0.55;
+  }
+  .cursor-ring.hover {
+    width: var(--cursor-hover-size); height: var(--cursor-hover-size);
+    opacity: 1;
+    background: rgba(245, 165, 36, 0.06);
+  }
+  body.no-custom-cursor { cursor: auto; }
+  body.no-custom-cursor a,
+  body.no-custom-cursor button,
+  body.no-custom-cursor input,
+  body.no-custom-cursor textarea,
+  body.no-custom-cursor label { cursor: auto; }
+  body.no-custom-cursor .cursor-dot,
+  body.no-custom-cursor .cursor-ring { display: none; }
+  body.no-grid::before { display: none; }
+  .cursor-dot.hover { transform: translate(-50%, -50%) scale(0.5); }
+  .cursor-ring.click { width: calc(var(--cursor-size) - 11px); height: calc(var(--cursor-size) - 11px); }
+  @media (hover: none), (pointer: coarse) {
+    body, a, button, input, textarea, label { cursor: auto; }
+    .cursor-dot, .cursor-ring { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-dot, .cursor-ring { display: none; }
+    body, a, button { cursor: auto; }
+  }
+
+  /* ───────── Background grid + glow ───────── */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(255,255,255,0.018) 1px, transparent 1px) 0 0 / 88px 100%,
+      linear-gradient(to bottom, rgba(255,255,255,0.018) 1px, transparent 1px) 0 0 / 100% 88px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(245,165,36,0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, rgba(245,165,36,0.04), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main, header, footer { position: relative; z-index: 1; }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad-x);
+  }
+
+  /* ───────── Top bar ───────── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(11, 13, 16, 0.72);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-dot {
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: var(--pass);
+    box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.12);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.12); }
+    50%      { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0.04); }
+  }
+  .brand b { font-weight: 600; }
+  .brand span { color: var(--ink-mute); }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-dim);
+  }
+  .nav-links a {
+    transition: color .2s ease;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a::before {
+    content: "/";
+    color: var(--ink-mute);
+    margin-right: 6px;
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+
+  /* ───────── Section chrome ───────── */
+  section { padding: clamp(80px, 12vh, 140px) 0; }
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .section-tag::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .section-title {
+    font-family: var(--sans);
+    font-size: clamp(32px, 4.4vw, 52px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .section-lede {
+    color: var(--ink-dim);
+    font-size: clamp(16px, 1.4vw, 18px);
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+  .section-head {
+    margin-bottom: 56px;
+  }
+
+  /* ───────── HERO ───────── */
+  .hero {
+    padding-top: clamp(72px, 10vh, 120px);
+    padding-bottom: clamp(72px, 10vh, 120px);
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--gutter);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+
+  .hero-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .hero-meta .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-meta .pill::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--ink-mute);
+    transform: rotate(45deg);
+  }
+  .hero-meta .pill.ok::before { background: var(--pass); transform: none; border-radius: 999px; }
+
+  h1.hero-name {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(56px, 9vw, 124px);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  h1.hero-name .amp {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.6em;
+    vertical-align: 0.18em;
+    margin: 0 0.08em 0 0.04em;
+    letter-spacing: 0;
+  }
+  .hero-tagline {
+    font-family: var(--sans);
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink-dim);
+    max-width: 30ch;
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .hero-tagline em {
+    font-style: normal;
+    color: var(--ink);
+    border-bottom: 1px dashed var(--accent-line);
+    padding-bottom: 2px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    --bg: transparent;
+    --fg: var(--ink);
+    --bd: var(--line);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--bd);
+    border-radius: 2px;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn .arrow {
+    display: inline-block;
+    transition: transform .25s ease;
+  }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.primary {
+    --bg: var(--accent);
+    --fg: #0b0d10;
+    --bd: var(--accent);
+    font-weight: 600;
+  }
+  .btn.primary:hover { background: #ffb83b; border-color: #ffb83b; }
+  .btn.ghost:hover { border-color: var(--accent-line); color: var(--ink); background: var(--accent-soft); }
+
+  /* Hero side card — test status panel */
+  .status-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    overflow: hidden;
+  }
+  .status-card .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink-dim);
+  }
+  .status-card .row:last-child { border-bottom: none; }
+  .status-card .row .k { color: var(--ink-mute); }
+  .status-card .row .v { color: var(--ink); }
+  .status-card .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-elev-2);
+  }
+  .status-card .head .dots { display: flex; gap: 6px; }
+  .status-card .head .dots i {
+    display: block;
+    width: 9px; height: 9px;
+    border-radius: 999px;
+    background: #2a2f36;
+  }
+  .status-card .head .file {
+    color: var(--ink-mute);
+    font-size: 11.5px;
+  }
+  .status-card .pass { color: var(--pass); }
+  .status-card .warn { color: var(--warn); }
+
+  .bar-row {
+    padding: 16px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .bar {
+    height: 6px;
+    background: #1a1f25;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .bar i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #ffd58a);
+    width: 0;
+    animation: fillbar 1.8s ease-out 0.4s forwards;
+  }
+  @keyframes fillbar { to { width: 96%; } }
+
+  /* ───────── Skills marquee ───────── */
+  .marquee {
+    background: var(--accent);
+    color: #0b0d10;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 1;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 0;
+    animation: marquee 32s linear infinite;
+  }
+  .marquee span {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .marquee span::after {
+    content: "✦";
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ───────── EXHIBIT A · intentional bug ───────── */
+  .exhibit { padding-top: clamp(80px, 10vh, 120px); padding-bottom: clamp(80px, 10vh, 120px); }
+  .exhibit .section-tag::before { background: var(--fail); }
+  .exhibit .section-tag { color: var(--fail); }
+  .exhibit-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 820px) {
+    .exhibit-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* The fake "broken" UI on the left */
+  .bug-specimen {
+    position: relative;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
+  }
+  .bug-spec-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-elev-2);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+  }
+  .bug-spec-head .dots { display: flex; gap: 6px; }
+  .bug-spec-head .dots i {
+    display: block;
+    width: 9px; height: 9px;
+    border-radius: 999px;
+    background: #2a2f36;
+  }
+  .bug-spec-body {
+    position: relative;
+    padding: 36px 32px 32px;
+    background:
+      repeating-linear-gradient(45deg,
+        rgba(255,255,255,0.012) 0 12px,
+        transparent 12px 24px),
+      var(--bg-elev);
+  }
+  .bug-fake-app {
+    background: #1a1f25;
+    border-radius: 4px;
+    padding: 24px 26px;
+    border: 1px solid #232830;
+  }
+  .bug-fake-app .app-eyebrow {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .bug-fake-app .app-greeting {
+    font-family: var(--sans);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 10px;
+    line-height: 1.25;
+  }
+  .bug-fake-app .app-sub {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    margin: 0 0 18px;
+  }
+  .bug-fake-app .app-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #0b0d10;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  /* The actual bug: un-interpolated template literal, framed in red */
+  .bug-target {
+    position: relative;
+    display: inline-block;
+    color: var(--fail);
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.92em;
+    padding: 0 4px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px dashed rgba(239, 68, 68, 0.55);
+    border-radius: 2px;
+    vertical-align: 1px;
+  }
+  .bug-target::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border: 1px solid var(--fail);
+    border-radius: 4px;
+    pointer-events: none;
+    animation: bugPulse 2.6s ease-in-out infinite;
+  }
+  @keyframes bugPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.0); }
+    50%      { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.10); }
+  }
+  .bug-annot {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--fail);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 2px;
+    background: rgba(239, 68, 68, 0.06);
+  }
+  .bug-annot::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--fail);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18);
+  }
+
+  /* Right: the QA bug-report card */
+  .bug-report {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--accent);
+    border-radius: 4px;
+    padding: 24px 26px 26px;
+    font-family: var(--mono);
+    font-size: 13px;
+    position: relative;
+  }
+  .bug-report-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+  }
+  .bug-report-head .bug-id {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .bug-report-head .sep { color: var(--ink-mute); }
+  .bug-report-head .sev {
+    color: var(--fail);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 10px;
+  }
+  .bug-report h3 {
+    font-family: var(--sans);
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  .bug-steps {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--ink-dim);
+  }
+  .bug-steps li {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 10px;
+    font-size: 12.5px;
+  }
+  .bug-steps li b {
+    color: var(--ink-mute);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    align-self: center;
+  }
+  .bug-steps li span { color: var(--ink); }
+  .bug-steps li .red { color: var(--fail); }
+  .bug-steps li .green { color: var(--pass); }
+  .bug-verdict {
+    position: relative;
+    padding: 16px 18px;
+    margin: 4px 0 16px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    border-radius: 3px;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .bug-verdict::before {
+    content: "MY TAKE";
+    position: absolute;
+    top: -8px;
+    left: 12px;
+    background: var(--bg-elev);
+    padding: 0 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .bug-verdict em {
+    font-style: normal;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .bug-stamps {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .bug-stamps span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--pass);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    background: rgba(74, 222, 128, 0.06);
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: var(--gutter);
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .about-meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-left: 1px solid var(--line);
+    padding-left: 18px;
+  }
+  .about-meta b {
+    color: var(--ink);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .about-body p {
+    font-size: clamp(17px, 1.5vw, 19px);
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 22px;
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+  .about-body p + p { color: var(--ink-dim); }
+  .about-body p strong {
+    color: var(--ink);
+    font-weight: 500;
+    background: linear-gradient(transparent 65%, var(--accent-soft) 65%);
+    padding: 0 2px;
+  }
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 36px;
+  }
+  @media (max-width: 640px) { .principles { grid-template-columns: 1fr; } }
+  .principle {
+    border: 1px solid var(--line);
+    padding: 18px 20px;
+    border-radius: 3px;
+    background: var(--bg-elev);
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .principle:hover { border-color: var(--accent-line); transform: translateY(-2px); }
+  .principle .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .principle h4 {
+    margin: 8px 0 6px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .principle p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+
+  /* Education / receipt card */
+  .receipt {
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    background: var(--bg-elev);
+    border-radius: 3px;
+    padding: 22px 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    max-width: 560px;
+  }
+  .receipt-head {
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--ink-mute);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .receipt-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 6px 0;
+    color: var(--ink-dim);
+  }
+  .receipt-row b { color: var(--ink); font-weight: 500; }
+  .receipt-row.total {
+    margin-top: 10px; padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    color: var(--accent);
+  }
+  .receipt-row.total b { color: var(--accent); }
+
+  /* ───────── SKILLS ───────── */
+  .skill-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) { .skill-groups { grid-template-columns: 1fr; } }
+
+  .skill-group {
+    border: 1px solid var(--line);
+    background: var(--bg-elev);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .skill-group:hover { border-color: var(--accent-line); transform: translateY(-3px); }
+
+  .skill-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-elev-2);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+  }
+  .skill-group-head .group-name {
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .skill-group-head .count {
+    color: var(--accent);
+  }
+  .skill-list {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+  }
+  .skill-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    border-bottom: 1px dashed var(--line-soft);
+    transition: background .2s ease;
+  }
+  .skill-list li:last-child { border-bottom: none; }
+  .skill-list li:hover { background: rgba(245, 165, 36, 0.04); }
+  .skill-list li .name { display: flex; align-items: center; gap: 12px; }
+  .skill-list li .check {
+    font-family: var(--mono);
+    color: var(--pass);
+    font-size: 11px;
+  }
+  .skill-list li .lvl {
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.03em;
+  }
+
+  /* ───────── PROJECTS ───────── */
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+    padding: 28px 28px 30px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    position: relative;
+    transition: border-color .35s ease, transform .35s ease, background .35s ease;
+  }
+  .project::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .35s ease;
+  }
+  .project:hover {
+    border-color: var(--accent-line);
+    transform: translateX(2px);
+  }
+  .project:hover::before { transform: scaleY(1); }
+  @media (max-width: 820px) {
+    .project { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+  }
+
+  .project .idx {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding-top: 4px;
+  }
+  .project .idx .id { display: block; color: var(--ink-mute); font-size: 11px; margin-top: 6px; }
+  .project h3 {
+    margin: 0 0 6px;
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  .project .role {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+  .project p {
+    margin: 0 0 14px;
+    color: var(--ink-dim);
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 52ch;
+  }
+  .stack {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .stack span {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-dim);
+    letter-spacing: 0.02em;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    padding-top: 4px;
+  }
+  .metric .v {
+    font-family: var(--sans);
+    font-size: clamp(24px, 2.4vw, 30px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .metric .v .accent { color: var(--accent); }
+  .metric .k {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+  }
+
+  /* ───────── CONTACT ───────── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--gutter);
+    align-items: start;
+  }
+  @media (max-width: 820px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  .contact-side h2 {
+    font-family: var(--sans);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .contact-side h2 .accent { color: var(--accent); }
+  .contact-side p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 42ch;
+    margin: 0 0 28px;
+  }
+  .contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .contact-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--ink);
+    transition: color .25s ease, padding .25s ease;
+  }
+  .contact-list li:last-child a { border-bottom: 1px solid var(--line); }
+  .contact-list li a:hover { color: var(--accent); padding-left: 10px; }
+  .contact-list li a .label { color: var(--ink-mute); margin-right: 16px; }
+  .contact-list li a .val { font-weight: 500; }
+
+  form.contact-form {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .form-row { display: flex; flex-direction: column; gap: 8px; }
+  .form-row label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-row label::before {
+    content: "→";
+    color: var(--accent);
+    font-size: 12px;
+  }
+  .form-row input,
+  .form-row textarea {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    padding: 8px 0;
+    outline: none;
+    resize: none;
+    transition: border-color .25s ease;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder { color: var(--ink-mute); }
+  .form-row input:focus,
+  .form-row textarea:focus { border-bottom-color: var(--accent); }
+  .form-row textarea { min-height: 96px; line-height: 1.5; }
+
+  form .submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  form .status-hint {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  form .status-hint .dot {
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--pass);
+  }
+
+  /* ───────── Footer ───────── */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 40px;
+  }
+  .foot-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-mute);
+  }
+  .foot-inner .right { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* ───────── Reveal-on-scroll ───────── */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  [data-reveal].in {
+    opacity: 1;
+    transform: none;
+  }
+  [data-reveal][data-delay="1"] { transition-delay: .08s; }
+  [data-reveal][data-delay="2"] { transition-delay: .16s; }
+  [data-reveal][data-delay="3"] { transition-delay: .24s; }
+  [data-reveal][data-delay="4"] { transition-delay: .32s; }
+  [data-reveal][data-delay="5"] { transition-delay: .40s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .bar i { animation: none; width: 96%; }
+    .brand-dot { animation: none; }
+    .marquee-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ───────────── NAV ───────────── -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <b>Clayton Mildy</b>
+      <span>// qa engineer</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#skills">skills</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
     </nav>
-
-    <button class="btn-lg btn-danger border-0 position-fixed bottom-0 end-0 m-4 rounded-circle rounded-circle-btn align-content-center justify-content-center text-center" style="z-index: 10;"><i class="fa-solid fa-message"></i></button>
-
-    <!-- end navbar top -->
-    <div class="container-fluid container-bg bg-light rounded-lg">
-      <hr class="w-90 mt-4"/>
-      <div class="container justify-content-center text-center text-break py-5">
-        <h1 class="display-4 fw-bold">
-          EMPOWERING <br />
-          INNOVATIONS, DELIVERING <br />
-          VALUE.
-        </h1>
-        <p class="lead">
-          Transforming your business with cutting-edge technology.
-        </p>
-        <a class="btn btn-danger btn-lg py-3 px-5" href="#" role="button"
-          >Learn more</a
-        >
-      </div>
-    </div>
-
-    <div class="justify-content-center text-center m-3 pt-4 pb-2">
-      <h3 class="display-6 fw-bold text-danger">ABOUT CRAFTY CODER</h3>
-    </div>
-
-    <hr class="container w-25 text-danger align-content-center" />
-
-    <!-- abt crafty coder -->
-    <div class="container pb-2 py-4">
-      <div
-        class="row justify-content-center align-content-center center-container"
-      >
-        <div class="col-lg my-2 text-center">
-          <img
-            class="img-fluid mx-auto"
-            src="img/ourmission.webp"
-            alt="ourmission"
-          />
-        </div>
-        <div class="col-lg container align-content-center mx-auto">
-          <h3 class="text-center fw-normal">Our Mission</h3>
-          <p class="text-center align-middle text-muted">
-            At Crafty Coder, our mission is to provide top-notch IT
-            consulting services to small businesses. We strive to help our
-            clients optimize their technology solutions to improve efficiency
-            and productivity.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container pb-2 py-4">
-      <div
-        class="row flex-column-reverse flex-md-row justify-content-center align-content-center center-container"
-      >
-        <div class="col-lg container align-content-center mx-auto">
-          <h3 class="text-center fw-normal">Our Team</h3>
-          <p class="text-center align-middle text-muted">
-            Our team is comprised of experienced IT professionals who are
-            passionate about helping small businesses succeed. We work closely
-            with our clients to understand their unique needs and provide
-            tailored solutions.
-          </p>
-        </div>
-        <div class="col-lg my-2 text-center">
-          <img
-            class="img-fluid mx-auto"
-            src="img/ourteam.webp"
-            alt="ourteam"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="container pb-2 py-4">
-      <div
-        class="row justify-content-center align-content-center center-container"
-      >
-        <div class="col-lg my-2 text-center">
-          <img
-            class="img-fluid mx-auto"
-            src="img/ourservices.webp"
-            alt="ourservices"
-          />
-        </div>
-        <div class="col-lg container align-content-center mx-auto">
-          <h3 class="text-center fw-normal">Our Services</h3>
-          <p class="text-center align-middle text-muted">
-            We offer a wide range of IT consulting services, including
-            UI/UX design, application development, software integration and
-            migration. Our services are designed to help small businesses stay
-            competitive and secure in today's digital landscape.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- end abt crafty order -->
-
-    <!-- online appointments -->
-    <div
-      class="container-fluid bg-light justify-content-center text-center mt-5 pb-5"
-    >
-      <div class="jumbotron mt-4">
-        <div class="container">
-          <h2 class="display-6 fw-bold text-danger pt-5 pb-4">
-            ONLINE APPOINTMENT
-          </h2>
-
-          <hr class="container w-25 text-danger align-content-center" />
-        </div>
-
-        <h4
-          class="container bg-top w-50 justify-content-center fw-normal py-3 mt-5 text-muted"
-        >
-          New services are coming soon!
-        </h4>
-      </div>
-    </div>
-    <div class="parallax-container container-fluid">
-        <div class="parallax-content container text-center">
-            <h2 class="display-6 fw-bold text-light pt-5 pb-5">
-            CLIENTS TESTIMONIAL
-          </h2>
-        </div>
-
-        <h4
-          class="container bg-parallax text-light w-75 justify-content-center text-center fw-normal py-2 mt-3"
-        >
-          Reviews coming soon!
-        </h4>
-        </div>
-    </div>
-    <!-- contact us -->
-    <div
-      class="container-fluid bg-light justify-content-centerpb-5"
-    >
-      <div class="jumbotron">
-        <div class="container  text-center ">
-          <h2 class="display-6 fw-bold text-danger pt-5 pb-3">
-            CONTACT US
-          </h2>
-
-          <hr class="container w-25 text-danger align-content-center" />
-        </div>
-      </div>
-    
-
-    <!-- contact us -->
-    <div class="container py-3">
-      <!-- Two Columns Grid -->
-      <div class="row flex-column-reverse flex-md-row">
-          <!-- First Column (Form) -->
-          <div class="col-md-6 px-5 justify-content-center">
-              <div>
-                  <h4 class="display-6" style="font-size: 1.6rem;">Drop us a line!</h4>
-                  <!-- Your Form Goes Here -->
-                  <form class="custom-form">
-                    <div class="my-4">
-                        <input type="text" class="form-control" placeholder="Name" name="name">
-                    </div>
-                    <div class="my-4">
-                        <input type="email" class="form-control" placeholder="Email*" name="email" required>
-                    </div>
-                    <div class="my-4">
-                        <textarea class="form-control form-control-lg" placeholder="Message" name="message" rows="4"></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <a href="#" id="fileLink" class="text-danger text-decoration-none"><i class="fa-solid fa-paperclip pe-2"></i>Attach Files</a>.
-                    <input type="file" id="fileUpload" name="fileUpload">
-                  </div>
-                  <p class="fs-6 text-center text-muted">
-                    This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-                  </p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <button type="submit" class="btn btn-danger mx-2 btn-lg">Send</button>
-                    <a href="#" class="text-danger mx-2">Cancel</a>
-                </div>
-                </form>
-              </div>
-          </div>
-  
-          <!-- Second Column (Image) -->
-          <div class="col-md-6 mb-4">
-              <div>
-                  <!-- Your Image Goes Here -->
-                  <img
-            class="img-fluid mx-auto"
-            src="img/contactusimg.webp"
-            alt="ourteam"
-          />
-              </div>
-          </div>
-      </div>
   </div>
-</div>
-<!-- end contact us -->
-<!-- subscribe -->
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg text-danger display-6 fw-normal mb-3 text-center">
-      Subscribe
+</header>
+
+<main id="top">
+
+  <!-- ───────────── HERO ───────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-meta" data-reveal>
+            <span class="pill ok">currently @ WidaTech</span>
+            <span class="pill">~4 yrs in qa</span>
+            <span class="pill">istqb ctfl certified</span>
+          </div>
+
+          <h1 class="hero-name" data-reveal data-delay="1">
+            Clayton<br/>Mildy<span class="amp">.qa</span>
+          </h1>
+
+          <p class="hero-tagline" data-reveal data-delay="2">
+            I break things on purpose so your users <em>don't have to</em> by accident. self-taught, deeply nosy.
+          </p>
+
+          <div class="cta-row" data-reveal data-delay="3">
+            <a href="#work" class="btn primary">
+              View My Work
+              <span class="arrow">→</span>
+            </a>
+            <a href="#contact" class="btn ghost">
+              Contact Me
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="status-card" data-reveal data-delay="4" aria-label="Live test summary">
+          <div class="head">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="file">~ /career/clayton.cy.ts</div>
+          </div>
+          <div class="row">
+            <span class="k">status</span>
+            <span class="v pass">✓ currently shipping</span>
+          </div>
+          <div class="row">
+            <span class="k">bugs caught</span>
+            <span class="v">1,200+</span>
+          </div>
+          <div class="row">
+            <span class="k">qa team size</span>
+            <span class="v">1 (just me)</span>
+          </div>
+          <div class="bar-row">
+            <div class="row" style="padding:0; border:none;">
+              <span class="k">trust level</span>
+              <span class="v warn">96%</span>
+            </div>
+            <div class="bar" aria-hidden="true"><i></i></div>
+          </div>
+        </aside>
+      </div>
     </div>
-    <div class="col-lg-7 ">
-      <input type="email" class="mb-3 justify-content-center form-control form-control-lg" placeholder="Email*" name="email" required>
-    </div>
-    <div class="col-lg text-center">
-      <button type="submit" class="mb-3 btn btn-danger btn-lg" style="width: 100%;">Sign Up</button>
+  </section>
+
+  <!-- ───────────── Skills marquee ───────────── -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Cypress</span><span>Selenium</span><span>Appium</span><span>API Testing</span><span>Postman</span>
+      <span>Manual Testing</span><span>Test Strategy</span><span>Bug Reporting</span>
+      <span>GitHub Actions</span><span>ISTQB CTFL</span><span>Regression Suites</span>
+      <span>Cypress</span><span>Selenium</span><span>Appium</span><span>API Testing</span><span>Postman</span>
+      <span>Manual Testing</span><span>Test Strategy</span><span>Bug Reporting</span>
+      <span>GitHub Actions</span><span>ISTQB CTFL</span><span>Regression Suites</span>
     </div>
   </div>
-</div>
-<!-- end subscribe -->
-<!-- footer -->
-<footer class="footer mt-auto py-3 bg-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 text-center pt-2">
-        <!-- Left side content -->
-        <p class="text-muted">Copyright © 2023 Crafty Coder - All Rights Reserved.</p>
+
+  <!-- ───────────── ABOUT ───────────── -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-tag">01 · About</div>
+        <h2 class="section-title">no cs degree. just receipts<br/>and a lot of test cases.</h2>
       </div>
-      <div class="col-lg-6 text-lg-end text-center pt-2">
-        <!-- Right side content -->
-        <p class="text-muted">Powered by <span class="text-danger">GoDaddy</span></p>
+
+      <div class="about-grid">
+        <aside class="about-meta" data-reveal>
+          <div><b>Role</b>QA Engineer</div>
+          <div><b>Company</b>WidaTech (current)</div>
+          <div><b>Experience</b>~4 years</div>
+          <div><b>Education</b>Self-taught · online courses</div>
+          <div><b>Cert</b>ISTQB CTFL</div>
+          <div><b>Languages</b>EN · ID</div>
+        </aside>
+
+        <div class="about-body" data-reveal data-delay="1">
+          <p>
+            I'm Clayton — a QA engineer who skipped college and learned the craft the long way: online courses, docs, late-night labs, and shipping real software at <strong>WidaTech</strong>, where I've been the sole QA engineer for most of my career.
+          </p>
+          <p>
+            Being a one-person QA team meant I had to figure out everything — test strategy, manual coverage, automation, bug culture — without anyone to copy from. I wrote the standards. I picked the tools. I was also the <em>first person in the company to implement automated testing</em>, and the one who wired those tests into GitHub Actions so nothing ships without them.
+          </p>
+          <p>
+            The thing I actually care about isn't passing tests — it's the gap between <em>"the test passed"</em> and <em>"the user is happy."</em> Coverage numbers are easy. Catching the bug nobody thought to write a ticket for, at 2am on a slow Android device — that's the part I'm here for.
+          </p>
+
+          <div class="principles">
+            <div class="principle">
+              <div class="num">P.01</div>
+              <h4>Precision</h4>
+              <p>If a bug can't be reproduced clearly, it doesn't really exist yet. Specificity is kindness.</p>
+            </div>
+            <div class="principle">
+              <div class="num">P.02</div>
+              <h4>Clarity</h4>
+              <p>Every test case should read like an instruction, not a riddle. Future-me is the audience.</p>
+            </div>
+            <div class="principle">
+              <div class="num">P.03</div>
+              <h4>Iteration</h4>
+              <p>No suite stays good forever. I treat tests as living artifacts — pruned, refactored, owned.</p>
+            </div>
+          </div>
+
+          <div class="receipt" aria-label="Education receipt">
+            <div class="receipt-head">
+              <span>EDU_RECEIPT.txt</span>
+              <span>self-taught · 100% online</span>
+            </div>
+            <div class="receipt-row"><span>SMA (high school)</span><b>complete</b></div>
+            <div class="receipt-row"><span>college</span><b>skipped, on purpose</b></div>
+            <div class="receipt-row"><span>online courses · docs · labs</span><b>~4 yrs &amp; counting</b></div>
+            <div class="receipt-row"><span>ISTQB CTFL</span><b>certified</b></div>
+            <div class="receipt-row total"><span>career bug count</span><b>1,200+</b></div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ───────────── SKILLS ───────────── -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-tag">02 · Skills</div>
+        <h2 class="section-title">the toolbox, the methods,<br/>and the human bits.</h2>
+        <p class="section-lede">Three buckets I keep sharpened. Tools come and go — methodologies and instincts are what travel with me between teams (well, when there <em>are</em> other teammates).</p>
+      </div>
+
+      <div class="skill-groups">
+        <article class="skill-group" data-reveal>
+          <header class="skill-group-head">
+            <span class="group-name">tools.ts</span>
+            <span class="count">7 / 7 ok</span>
+          </header>
+          <ul class="skill-list">
+            <li><span class="name"><span class="check">✓</span>Cypress</span><span class="lvl">daily</span></li>
+            <li><span class="name"><span class="check">✓</span>Selenium</span><span class="lvl">familiar</span></li>
+            <li><span class="name"><span class="check">✓</span>Appium</span><span class="lvl">familiar</span></li>
+            <li><span class="name"><span class="check">✓</span>Postman</span><span class="lvl">advanced</span></li>
+            <li><span class="name"><span class="check">✓</span>GitHub Actions</span><span class="lvl">CI for tests</span></li>
+            <li><span class="name"><span class="check">✓</span>Jira</span><span class="lvl">daily</span></li>
+            <li><span class="name"><span class="check">✓</span>Git</span><span class="lvl">fluent</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-group" data-reveal data-delay="1">
+          <header class="skill-group-head">
+            <span class="group-name">methods.md</span>
+            <span class="count">6 / 6 ok</span>
+          </header>
+          <ul class="skill-list">
+            <li><span class="name"><span class="check">✓</span>Manual &amp; exploratory testing</span><span class="lvl">core</span></li>
+            <li><span class="name"><span class="check">✓</span>Test strategy &amp; planning</span><span class="lvl">core</span></li>
+            <li><span class="name"><span class="check">✓</span>Test case design</span><span class="lvl">core</span></li>
+            <li><span class="name"><span class="check">✓</span>API contract testing</span><span class="lvl">strong</span></li>
+            <li><span class="name"><span class="check">✓</span>Regression automation</span><span class="lvl">strong</span></li>
+            <li><span class="name"><span class="check">✓</span>Bug triage &amp; reporting</span><span class="lvl">strong</span></li>
+          </ul>
+        </article>
+
+        <article class="skill-group" data-reveal data-delay="2">
+          <header class="skill-group-head">
+            <span class="group-name">human.md</span>
+            <span class="count">5 / 5 ok</span>
+          </header>
+          <ul class="skill-list">
+            <li><span class="name"><span class="check">✓</span>Detail-obsessed</span><span class="lvl">politely</span></li>
+            <li><span class="name"><span class="check">✓</span>Methodical thinking</span><span class="lvl">steady</span></li>
+            <li><span class="name"><span class="check">✓</span>Curious by default</span><span class="lvl">always</span></li>
+            <li><span class="name"><span class="check">✓</span>Self-directed learning</span><span class="lvl">non-stop</span></li>
+            <li><span class="name"><span class="check">✓</span>Clear written comms</span><span class="lvl">strong</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── EXHIBIT A · intentional bug ───────────── -->
+  <section class="exhibit" id="exhibit" aria-label="Exhibit A — intentional bug">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-tag">Exhibit A · caught in the wild</div>
+        <h2 class="section-title">a bug, on purpose.<br/>so you can see what i actually do.</h2>
+        <p class="section-lede">There's a real, working bug in the mock below — the kind I catch most weeks. Look at the greeting before you read the report on the right.</p>
+      </div>
+
+      <div class="exhibit-grid">
+
+        <!-- The deliberately-broken UI -->
+        <div class="bug-specimen" data-reveal>
+          <div class="bug-spec-head">
+            <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>app · /dashboard</span>
+            <span>v2.4.1-rc.3</span>
+          </div>
+          <div class="bug-spec-body">
+            <div class="bug-annot" aria-hidden="true">live · unfixed</div>
+            <div class="bug-fake-app" role="img" aria-label="A mock dashboard greeting where the template literal user.name was not interpolated, showing the literal text dollar-sign brace user dot name brace instead of the user's name.">
+              <div class="app-eyebrow">DASHBOARD</div>
+              <h3 class="app-greeting">
+                Welcome back, <span class="bug-target">${user.name}</span> 👋
+              </h3>
+              <p class="app-sub">Here's what shipped while you were away.</p>
+              <button class="app-btn" type="button" tabindex="-1">View activity →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- The QA bug-report card -->
+        <article class="bug-report" data-reveal data-delay="1">
+          <header class="bug-report-head">
+            <span class="bug-id">BUG-0042</span>
+            <span class="sep">·</span>
+            <span>Greeting</span>
+            <span class="sep">·</span>
+            <span class="sev">SEV: P1</span>
+          </header>
+
+          <h3>Unrendered template literal in user-facing greeting</h3>
+
+          <ul class="bug-steps">
+            <li><b>Found</b><span>visual scan, pre-deploy review</span></li>
+            <li><b>Where</b><span>Dashboard.tsx · L24 · greeting binding</span></li>
+            <li><b>Expected</b><span class="green">"Welcome back, Clayton 👋"</span></li>
+            <li><b>Actual</b><span class="red">"Welcome back, ${user.name} 👋"</span></li>
+          </ul>
+
+          <div class="bug-verdict">
+            Yeah — <em>I catch things like this</em> before the user does.
+          </div>
+
+          <div class="bug-stamps">
+            <span>✓ filed</span>
+            <span>✓ reproduced</span>
+            <span>✓ test written</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── PROJECTS ───────────── -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="section-tag">03 · Selected Work</div>
+        <h2 class="section-title">a few things i'm quietly proud of.</h2>
+        <p class="section-lede">All shipped while wearing the only QA hat in the room. Names anonymized where needed — but the numbers are real.</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project" data-reveal>
+          <div class="idx">
+            01<span class="id">CASE-001</span>
+          </div>
+          <div>
+            <h3>API regression automation: 2 hours → 3 minutes</h3>
+            <div class="role">Lead QA · WidaTech · Postman + GitHub Actions</div>
+            <p>
+              Every release used to start with ~2 hours of me clicking through Postman collections by hand. Built out a full API automation layer, wired it into GitHub Actions so it runs on every PR, and turned a manual ritual into a 3-minute green check. Saved the team something like <strong>10+ hours a sprint</strong> and made deploys feel boring (which, in QA, is the highest compliment).
+            </p>
+            <div class="stack">
+              <span>Postman</span><span>Newman</span><span>GitHub Actions</span><span>Node</span>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">2h → <span class="accent">3 min</span></div><div class="k">api regression time</div></div>
+            <div class="metric"><div class="v"><span class="accent">~40x</span></div><div class="k">faster feedback loop</div></div>
+            <div class="metric"><div class="v"><span class="accent">100%</span></div><div class="k">runs on every PR via CI</div></div>
+            <div class="metric"><div class="v"><span class="accent">10+ h</span></div><div class="k">manual time saved / sprint</div></div>
+          </div>
+        </article>
+
+        <article class="project" data-reveal data-delay="1">
+          <div class="idx">
+            02<span class="id">CASE-002</span>
+          </div>
+          <div>
+            <h3>First-ever automation suite + CI/CD test gating</h3>
+            <div class="role">Sole QA Engineer · WidaTech · Cypress + Playwright</div>
+            <p>
+              Walked into a codebase with zero automated tests. Picked the framework, set the conventions, wrote the first suite, and connected it to GitHub Actions so failing tests block merges. The bar moved from <em>"hopefully QA caught it"</em> to <em>"the pipeline says no."</em> It's still the foundation everything else is built on.
+            </p>
+            <div class="stack">
+              <span>Cypress</span><span>Playwright</span><span>TypeScript</span><span>GitHub Actions</span>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v"><span class="accent">0 → 1</span></div><div class="k">automation suite (built from scratch)</div></div>
+            <div class="metric"><div class="v"><span class="accent">PR-gated</span></div><div class="k">tests block bad merges</div></div>
+            <div class="metric"><div class="v"><span class="accent">1st</span></div><div class="k">automation impl in company history</div></div>
+            <div class="metric"><div class="v"><span class="accent">~85%</span></div><div class="k">critical-path coverage</div></div>
+          </div>
+        </article>
+
+        <article class="project" data-reveal data-delay="2">
+          <div class="idx">
+            03<span class="id">CASE-003</span>
+          </div>
+          <div>
+            <h3>Writing the QA playbook from scratch</h3>
+            <div class="role">Sole QA Engineer · WidaTech · Notion + Confluence + receipts</div>
+            <p>
+              No prior QA function meant no test strategy, no severity rubric, no bug template, no definition of done. Built all of it: a documented QA standard the whole team uses, a bug-report template devs actually <em>read</em>, severity tiers tied to release decisions, and a definition-of-done checklist that's now part of every ticket. A QA culture, written down so it survives me.
+            </p>
+            <div class="stack">
+              <span>Test strategy</span><span>Bug template</span><span>Severity rubric</span><span>DoD checklist</span>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v"><span class="accent">1,200+</span></div><div class="k">bugs caught pre-prod</div></div>
+            <div class="metric"><div class="v"><span class="accent">1</span></div><div class="k">company-wide QA standard, written</div></div>
+            <div class="metric"><div class="v"><span class="accent">4</span></div><div class="k">severity tiers tied to release</div></div>
+            <div class="metric"><div class="v"><span class="accent">100%</span></div><div class="k">tickets now use the DoD checklist</div></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── CONTACT ───────────── -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-side" data-reveal>
+          <div class="section-tag">04 · Contact</div>
+          <h2>got a suite that<br/>needs <span class="accent">a second pair</span><br/>of careful eyes?</h2>
+          <p>
+            Open to chat about QA, automation, test strategy, or just trading bug stories. Currently building things at WidaTech — but the inbox is always open. I actually read everything.
+          </p>
+          <ul class="contact-list">
+            <li><a href="/cdn-cgi/l/email-protection#e48788859d908b8a898d88809da48389858d88ca878b89"><span><span class="label">email</span><span class="val"><span class="__cf_email__" data-cfemail="7e1d121f070a11101317121a073e19131f1712501d1113">[email&#160;protected]</span></span></span><span>→</span></a></li>
+            <li><a href="https://www.linkedin.com/in/clayton-mildy-638005259/" target="_blank" rel="noopener"><span><span class="label">linkedin</span><span class="val">/in/clayton-mildy</span></span><span>↗</span></a></li>
+            <li><a href="https://github.com/clytnmld" target="_blank" rel="noopener"><span><span class="label">github</span><span class="val">@clytnmld</span></span><span>↗</span></a></li>
+            <li><a href="#"><span><span class="label">resume</span><span class="val">clayton-mildy-qa.pdf</span></span><span>↓</span></a></li>
+          </ul>
+        </div>
+
+        <form class="contact-form" data-reveal data-delay="1" novalidate>
+          <div class="form-row">
+            <label for="name">name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-row">
+            <label for="email">email</label>
+            <input id="email" name="email" type="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="form-row">
+            <label for="subject">subject</label>
+            <input id="subject" name="subject" type="text" placeholder="QA for our payments app" />
+          </div>
+          <div class="form-row">
+            <label for="msg">message</label>
+            <textarea id="msg" name="msg" placeholder="A bit about the project, the team size, timeline, and what 'quality' means to you on this one." required></textarea>
+          </div>
+          <div class="submit-row">
+            <span class="status-hint"><span class="dot" aria-hidden="true"></span>usually replies within 24h</span>
+            <button type="submit" class="btn primary">
+              Send message
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>© 2026 Clayton Mildy · built &amp; tested by hand</div>
+    <div class="right">
+      <span>v2.4.1</span>
+      <span>self-taught, certified, caffeinated</span>
+      <span style="color: var(--pass);">● all systems passing</span>
     </div>
   </div>
 </footer>
-<!-- end footer -->
-    <!-- js -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/70493098ee.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      var nav = document.querySelector("nav");
 
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset > 100) {
-          nav.classList.add("bg-navbar", "shadow");
-        } else {
-          nav.classList.remove("bg-navbar", "shadow");
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ───────── Custom cursor ─────────
+  (function () {
+    const dot  = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+
+    // Disable on touch / reduced-motion
+    const coarse = matchMedia('(hover: none), (pointer: coarse)').matches;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (coarse || reduced) {
+      dot.style.display = 'none';
+      ring.style.display = 'none';
+      document.body.style.cursor = 'auto';
+      return;
+    }
+
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+
+    window.addEventListener('mousemove', (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      dot.style.left = mx + 'px';
+      dot.style.top  = my + 'px';
+    }, { passive: true });
+
+    window.addEventListener('mousedown', () => ring.classList.add('click'));
+    window.addEventListener('mouseup',   () => ring.classList.remove('click'));
+    window.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+    window.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '0.55'; });
+
+    function tick() {
+      rx += (mx - rx) * 0.14;
+      ry += (my - ry) * 0.14;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(tick);
+    }
+    tick();
+
+    // Hover targets
+    const hoverSelector = 'a, button, input, textarea, label, .stat-card, .principle, .skill-group, .skill-list li, .project, .contact-list li, .stack span, .pill';
+    document.querySelectorAll(hoverSelector).forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('hover');
+        ring.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('hover');
+        ring.classList.remove('hover');
+      });
+    });
+  })();
+
+  // ───────── Reveal-on-scroll ─────────
+  (function () {
+    const els = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
         }
       });
-      document.addEventListener("DOMContentLoaded", function () {
-        var navbarToggler = document.querySelector(".navbar-toggler");
-        var navbar = document.querySelector(".navbar");
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => io.observe(el));
+  })();
 
-        navbarToggler.addEventListener("click", function () {
-            if (navbarToggler.getAttribute("aria-expanded") === "true") {
-                navbar.classList.add("bg-navbar");
-            } else {
-                navbar.classList.remove("bg-navbar");
-            }
-        });
-    });
+  // ───────── Form: friendly UX, no backend ─────────
+  document.querySelector('form.contact-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.currentTarget.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '✓ Sent <span class="arrow">→</span>';
+    btn.style.background = '#4ade80';
+    btn.style.borderColor = '#4ade80';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+      e.target.reset();
+    }, 2200);
+  });
+</script>
 
-    //   document.addEventListener('scroll', function() {
-    //     var scrollPosition = window.scrollY;
-    //     var parallaxContainer = document.querySelector('.parallax-container::before');
-        
-    //     // Adjust the condition based on your needs
-    //     if (scrollPosition > 100) {
-    //         parallaxContainer.style.animation = 'zoomOut 10s infinite alternate';
-    //     } else {
-    //         parallaxContainer.style.animation = 'none';
-    //     }
-    // });
-    document.getElementById('fileLink').addEventListener('click', function () {
-        document.getElementById('fileUpload').click();
-    });
-    </script>
-  </body>
+<!-- ─────────────── Tweaks ─────────────── -->
+<div id="tweaks-root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<script type="text/babel">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "cursorSize": 53,
+    "cursorDotSize": 27,
+    "customCursor": true,
+    "accent": "#f5a524",
+    "bgGrid": true,
+    "tagline": "casual"
+  }/*EDITMODE-END*/;
+
+  // Hex → rgba(r,g,b,a) for the soft accent fills
+  function hexA(hex, a) {
+    const h = hex.replace('#', '');
+    const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h;
+    const r = parseInt(x.slice(0, 2), 16);
+    const g = parseInt(x.slice(2, 4), 16);
+    const b = parseInt(x.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${a})`;
+  }
+
+  const TAGLINES = {
+    casual: `I break things on purpose so your users don't have to by accident. self-taught, deeply nosy.`,
+    direct: `QA Engineer. ~4 years. Self-taught. ISTQB CTFL. Currently building quality systems at WidaTech.`,
+    punchy: `Manual testing, automation, and an unreasonable amount of attention to detail.`,
+  };
+
+  function TweaksApp() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+    // Apply tweaks live
+    React.useEffect(() => {
+      const root = document.documentElement;
+      root.style.setProperty('--cursor-size', t.cursorSize + 'px');
+      root.style.setProperty('--cursor-hover-size', (t.cursorSize + 16) + 'px');
+      root.style.setProperty('--cursor-dot-size', t.cursorDotSize + 'px');
+      root.style.setProperty('--accent', t.accent);
+      root.style.setProperty('--accent-soft', hexA(t.accent, 0.12));
+      root.style.setProperty('--accent-line', hexA(t.accent, 0.35));
+      root.style.setProperty('--warn', t.accent);
+
+      document.body.classList.toggle('no-custom-cursor', !t.customCursor);
+      document.body.classList.toggle('no-grid', !t.bgGrid);
+
+      const taglineEl = document.querySelector('.hero-tagline');
+      if (taglineEl) {
+        const txt = TAGLINES[t.tagline] || TAGLINES.casual;
+        // preserve the inner <em> only for the casual variant
+        if (t.tagline === 'casual') {
+          taglineEl.innerHTML = `I break things on purpose so your users <em>don't have to</em> by accident. self-taught, deeply nosy.`;
+        } else {
+          taglineEl.textContent = txt;
+        }
+      }
+    }, [t]);
+
+    return (
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Cursor" />
+        <TweakSlider
+          label="Ring size"
+          value={t.cursorSize}
+          min={20} max={72} step={1} unit="px"
+          onChange={(v) => setTweak('cursorSize', v)}
+        />
+        <TweakSlider
+          label="Dot size"
+          value={t.cursorDotSize}
+          min={4} max={28} step={1} unit="px"
+          onChange={(v) => setTweak('cursorDotSize', v)}
+        />
+        <TweakToggle
+          label="Custom cursor"
+          value={t.customCursor}
+          onChange={(v) => setTweak('customCursor', v)}
+        />
+
+        <TweakSection label="Theme" />
+        <TweakColor
+          label="Accent"
+          value={t.accent}
+          options={['#f5a524', '#7dd3fc', '#a3e635', '#f472b6', '#fb7185']}
+          onChange={(v) => setTweak('accent', v)}
+        />
+        <TweakToggle
+          label="Background grid"
+          value={t.bgGrid}
+          onChange={(v) => setTweak('bgGrid', v)}
+        />
+
+        <TweakSection label="Hero" />
+        <TweakRadio
+          label="Tagline"
+          value={t.tagline}
+          options={['casual', 'direct', 'punchy']}
+          onChange={(v) => setTweak('tagline', v)}
+        />
+      </TweaksPanel>
+    );
+  }
+
+  const mount = document.getElementById('tweaks-root');
+  if (mount) ReactDOM.createRoot(mount).render(<TweaksApp />);
+</script>
+
+</body>
 </html>
