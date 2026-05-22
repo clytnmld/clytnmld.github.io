@@ -28,12 +28,16 @@
   position: relative;
   color: var(--ink-mute);
   font-weight: 500;
+  /* inline-block keeps the strikethrough ::after sized to this span only.
+     Without it, an inline span that wraps lets the absolute child bleed
+     into the next line. */
+  display: inline-block;
 }
 .headline .strike::after {
   content: "";
   position: absolute;
-  left: -2%;
-  right: -2%;
+  left: 0;
+  right: 0;
   top: 56%;
   height: 2px;
   background: var(--accent);
@@ -203,15 +207,34 @@
   .flows  { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
-  .pipe {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scrollbar-width: thin;
-  }
-  .step { min-width: 110px; flex: 0 0 auto; }
   .flow { padding: 22px 20px 20px; }
   .flow p { font-size: 13.5px; }
   .headline { font-size: clamp(28px, 7vw, 42px); margin-bottom: 24px; }
-  .headline br { display: none; }
   .closing { padding: 20px 20px; margin-top: 32px; font-size: 16px; }
+
+  /* Pipeline: drop from horizontal scroll to a clean 2×2 grid so all four
+     steps stay visible at narrow widths. */
+  .pipe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .step {
+    border-right: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line);
+    min-width: 0;
+  }
+  /* Right-column cells: no right border. */
+  .step:nth-child(2n) { border-right: none; }
+  /* Bottom-row cells (the last two): no bottom border. */
+  .step:nth-last-child(-n + 2) { border-bottom: none; }
+}
+
+@media (max-width: 400px) {
+  /* Below ~iPhone SE: collapse pipeline to a single column. */
+  .pipe { grid-template-columns: 1fr; }
+  .step {
+    border-right: none;
+    border-bottom: 1px dashed var(--line);
+  }
+  .step:last-child { border-bottom: none; }
 }
