@@ -1,0 +1,43 @@
+.strip {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px var(--pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+.inner :global(b) { color: var(--ink); font-weight: 500; }
+.inner :global(.ok) { color: var(--pass); }
+.inner :global(.accent) { color: var(--accent); }
+
+/* Dashed connector between strip items. */
+.mid {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0 6px,
+    transparent 6px 12px
+  );
+  min-width: 60px;
+}
+
+@media (max-width: 640px) {
+  .inner { font-size: 10px; gap: 10px; }
+  .mid { min-width: 24px; }
+}

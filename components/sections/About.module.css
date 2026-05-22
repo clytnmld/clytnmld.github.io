@@ -1,0 +1,140 @@
+.grid {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--gutter);
+  align-items: start;
+}
+
+/* Left-side monospace metadata column. */
+.meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-mute);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+.meta b {
+  color: var(--ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Bio paragraphs */
+.body p {
+  font-size: clamp(17px, 1.5vw, 19px);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 22px;
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+.body p + p { color: var(--ink-dim); }
+.body p :global(em) {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 500;
+  background: linear-gradient(transparent 65%, var(--accent-soft) 65%);
+  padding: 0 2px;
+}
+
+/* Three principle cards */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+.principle {
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  border-radius: 3px;
+  background: var(--bg-elev);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.principle:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-2px);
+}
+.principle .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.principle h4 {
+  margin: 8px 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.principle p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+  line-height: 1.5;
+}
+
+/* Education receipt card */
+.receipt {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  background: var(--bg-elev);
+  border-radius: 3px;
+  padding: 22px 24px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  max-width: 560px;
+}
+.receiptHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ink-mute);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+}
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  color: var(--ink-dim);
+}
+.receiptRow b { color: var(--ink); font-weight: 500; }
+.total {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  color: var(--accent);
+}
+.total b { color: var(--accent); }
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .meta {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+    padding-top: 18px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+  }
+  .meta > div { min-width: 130px; }
+  .receipt { padding: 18px 18px; font-size: 12px; }
+}
+@media (max-width: 640px) {
+  .principles { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .principle { padding: 16px 16px; }
+}

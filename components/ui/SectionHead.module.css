@@ -1,0 +1,43 @@
+.head {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+/* Giant outlined numeral / letter that floats behind the heading. */
+.watermark {
+  position: absolute;
+  right: -8px;
+  top: -42px;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: clamp(120px, 18vw, 240px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(var(--accent-rgb), 0.12);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* Make sure real content stacks above the watermark. */
+.head > *:not(.watermark) { position: relative; z-index: 1; }
+
+/* Variant: the exhibit ("Exhibit A · caught in the wild") section flips
+   the tag + bar to fail-red instead of accent. */
+.failTag .tag {
+  color: var(--fail);
+}
+.failTag .tag::before {
+  background: var(--fail);
+}
+
+@media (max-width: 760px) {
+  .head { margin-bottom: 36px; }
+  .watermark {
+    font-size: clamp(96px, 32vw, 160px);
+    top: -28px;
+    right: -4px;
+  }
+}
