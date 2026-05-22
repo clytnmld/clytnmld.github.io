@@ -1,0 +1,156 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gutter);
+  align-items: start;
+}
+
+.side h2 {
+  font-family: var(--sans);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+.side h2 .accent { color: var(--accent); }
+.side p {
+  color: var(--ink-dim);
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 42ch;
+  margin: 0 0 28px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--ink);
+  transition: color .25s ease, padding .25s ease;
+}
+.list li:last-child a { border-bottom: 1px solid var(--line); }
+.list li a:hover { color: var(--accent); padding-left: 10px; }
+.list li a .label {
+  color: var(--ink-mute);
+  margin-right: 16px;
+}
+.list li a .val { font-weight: 500; }
+
+/* ─── Form ─── */
+.form {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.row { display: flex; flex-direction: column; gap: 8px; }
+.row label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.row label::before {
+  content: "→";
+  color: var(--accent);
+  font-size: 12px;
+}
+.row input,
+.row textarea {
+  font-family: var(--mono);
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  padding: 8px 0;
+  outline: none;
+  resize: none;
+  transition: border-color .25s ease;
+}
+.row input::placeholder,
+.row textarea::placeholder { color: var(--ink-mute); }
+.row input:focus,
+.row textarea:focus { border-bottom-color: var(--accent); }
+.row textarea { min-height: 96px; line-height: 1.5; }
+.req { color: var(--accent); margin-left: 2px; }
+
+/* Invalid state — applied to .row when validation fails */
+.invalid input,
+.invalid textarea { border-bottom-color: var(--fail); }
+.invalid label,
+.invalid label::before { color: var(--fail); }
+
+.error {
+  display: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--fail);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  align-items: center;
+  gap: 6px;
+}
+.invalid .error { display: inline-flex; }
+.error::before { content: "✕"; font-size: 11px; }
+
+.submitRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+.hint {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--ink-mute);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hint .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--pass);
+}
+.hint.errorTone { color: var(--fail); }
+.hint.errorTone .dot { background: var(--fail); }
+
+.submit.sent {
+  background: #4ade80 !important;
+  border-color: #4ade80 !important;
+}
+
+@media (max-width: 820px) {
+  .grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .form { padding: 22px 20px; }
+  .submitRow { flex-direction: column; align-items: stretch; gap: 14px; }
+  .list li a { flex-wrap: wrap; gap: 4px; padding: 14px 0; }
+  .list li a .label { font-size: 10.5px; }
+  .list li a .val { font-size: 13px; word-break: break-all; }
+}
